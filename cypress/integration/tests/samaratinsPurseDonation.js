@@ -13,6 +13,7 @@ describe(
             "Visits the website to make a donation",
             () => {
                 cy.visit("https://www.samaritanspurse.org/")
+                cy.url().should("eq", "https://www.samaritanspurse.org/")
                 cy.get("#menu-item-58118").invoke("show").click()
                 cy.get("input[class='menu-donate-amt']").last().type("1000")
                 cy.get("div[class='directCheckout md-checkout']").click()
